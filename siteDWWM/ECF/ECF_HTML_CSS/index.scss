@@ -1,0 +1,1272 @@
+@use 'bases';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    font-style: none;
+}
+
+@mixin flex( $flex: flex, $dir: row, $items: center, $content: center){
+    display: $flex;
+    flex-direction: $dir;
+    align-items: $items;
+    justify-content: $content;
+}
+
+@mixin btn_design ($w: 100px, $h:30px, $bg: gray, $color: #fff, $border: 5px){
+    width: $w;
+    height: $h;
+    background-color: $bg;
+    color: $color;
+    border-radius: $border;
+    cursor: pointer;
+}
+
+@mixin card_design($h: 250px, $w: 300px, $bg: #FAFAFA, $border: 7px){
+    height: $h;
+    width: $w;
+    background-color: $bg;
+    border-radius: $border;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: bases.$primary_font;
+}
+
+@mixin img_studies_design($h: 550px, $w: 800px, $radius: 10px 0px 0px 10px, $bg: url(images/studies_img.png)){
+    width: $w;
+    height: $h;
+    border-radius: $radius;
+    background-image: $bg;
+    background-size: cover;    
+}
+
+@mixin text_studies_design($w: 800px, $h: 550px, $gap: 50px, $bg: #f1f2ff, $radius: 0px 10px 10px 0px){
+    @include flex($dir: column, $items: flex-start);
+    width: $w;
+    height: $h;
+    gap: $gap;
+    font-family: bases.$primary_font;
+    background-color: $bg;
+    border-radius: $radius;
+}
+
+.navbar{
+    @include flex($content: space-between);
+    padding: 0px 50px;
+    height: 80px;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+    .logo{
+        height: 50px;
+    }
+    .icon_nav{
+        display: none;
+    }
+    .links{
+        @include flex($content: space-around);
+        width: 750px;
+        color: bases.$tertiary_clr;
+        font-family: bases.$primary_font;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .btn_nav{
+        @include btn_design($h: 45px, $w: 130px, $border: 5px, $bg: none, $color: #fafafa);
+        @include flex();
+        font-size: 14px;
+        font-weight: semibold;
+        font-family: bases.$primary_font;
+        background: linear-gradient(to bottom left, bases.$primary_clr, bases.$secondary_clr);
+    }
+}
+.navbar_responsive{
+    display: none;
+}
+
+.header{
+    @include flex();
+    margin-top: 70px;
+    .text_header{
+        @include flex($dir: column, $content: flex-start, $items: flex-start);
+        gap: 50px;
+        width: 500px;
+        .title{
+            font-family: bases.$primary_font;
+            font-size: 26px;
+            h1{
+                font-weight: lighter;
+            }
+            span{
+                font-weight: bold;
+            }
+            .clr_header{
+                background: linear-gradient(to bottom, bases.$quaternary_clr, bases.$septenary_clr);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+            }
+            .clr_header_2{
+                background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$octonary_clr);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+            }
+        }
+        .img_header_responsive{
+            display: none;
+        }
+        .subtitle{
+            font-size: 18px;
+            font-family: bases.$primary_font;
+            color: bases.$tertiary_clr;
+        }
+        .btn_header{
+            @include btn_design($w: 175px, $h: 50px,$bg: bases.$quinary_clr);
+            @include flex();
+            font-size: 14px;
+            font-family: bases.$primary_font;
+            box-shadow: 0px 4px 49px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+.section_services{
+    @include flex($dir: column,$content: space-between);
+    padding: 50px 0px;
+    height: 600px;
+    background-color: bases.$ninth_clr;
+    .deco_circle_services{
+        position: absolute;
+        left: 38%;
+        top: 69%;
+        z-index: -1;
+    }
+    .titles_services{
+        font-family: bases.$primary_font;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .container{
+        @include flex();
+        gap: 40px;
+        .card_services{
+            @include card_design();
+            @include flex($dir: column, $items: flex-start);
+            padding: 10px 10px;
+            gap: 20px;
+            .subtitle_card_responsive{
+                display: none;
+            }
+        }
+        .card_services_v{
+            @include card_design();
+            @include flex($dir: column, $items: flex-start);
+            padding: 10px 10px;
+            margin-top: 50px;
+            gap: 20px;
+            border: solid 1px bases.$sextenary_clr;
+            .gradient_text{
+                background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$secondary_clr);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+            }
+            .subtitle_card_responsive{
+                display: none;
+            }
+        }
+    }
+    .index_carrousel{
+        @include flex($content:flex-end);
+        width: 100%;
+        margin-right: 750px;
+        .index{
+            @include flex($content: flex-start);
+            width: 300px;
+        }
+        .index_2{
+            @include flex($content: flex-end);
+            width: 300px;
+        }
+    }
+    .deco_circle_services_2{
+        position: absolute;
+        left: 10%;
+        top: 141%;
+        z-index: -1;
+    }
+}
+
+.section_video{
+    @include flex();
+    height: 600px;
+    margin-top: 50px;
+    .container_2{
+        @include flex($items: flex-start);
+        width: 1300px;
+        gap: 250px;
+        .block_text{
+            @include flex($dir: column, $items:flex-start);
+            width: 350px;
+            gap: 35px;
+            .title_2{
+                font-family: bases.$primary_font;
+                font-size: 28px;
+            }
+            .subtitle_2{
+                font-family: bases.$primary_font;
+                font-size: 20px;
+                color: #718096;
+                span{
+                    background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$secondary_clr);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    color: transparent;
+                }
+            }
+            .links_info{
+                @include flex();
+                gap: 20px;
+                font-family: bases.$primary_font;
+                font-size: 18px;
+                color : bases.$secondary_clr;
+                .logo_ytb{
+                    display: none;
+                }
+            }
+        }
+        .video{
+            width: 600px;
+            height: 450px;
+            border-radius: 15px;
+            background-image: url(images/Abou-us-Video.png);
+        }
+    }
+}
+
+.section_coworker{
+    @include flex($dir: column);
+    .deco_circle_coworker{
+        position: absolute;
+        left: 80%;
+        top: 228%;
+        z-index: -1;    
+    }
+    .container_3{
+        @include flex($items: flex-start, $content: space-between);
+        height: 200px;
+        width: 1300px;
+        .block_text_partner{
+            width: 300px;
+            @include flex($dir: column, $items: flex-start);
+            font-family: bases.$primary_font;
+            font-size: 26px;
+            gap: 20px;
+        }
+        .arrow_partner{
+            @include flex();
+            gap: 40px;
+            margin-top: 125px;
+        }
+    }
+    .partner{
+        @include flex($content: space-around);
+        width: 100%;
+        height: 150px;
+        background-color: bases.$ninth_clr;
+    }
+}
+
+.section_customers{
+    @include flex();
+    padding-top: 50px;
+    gap: 50px;
+    .customers_caroussel{
+        @include flex($dir: column);
+        gap: 100px;
+        .title_customers{
+            @include flex($dir: column);
+            width: 250px;
+            font-family: bases.$primary_font;
+            font-size: 26px;
+            text-align: center;
+            gap: 20px;
+        }
+        .subtitles_customers{
+            @include flex($content: space-around);
+            width: 600px;
+            font-family: bases.$primary_font;
+            font-size: 16px;
+            text-align: center;
+            p{
+                width: 300px;
+                font-style: italic;
+            }
+            .deco_subtitle_customer_left{
+                margin-bottom: 100px;
+            }
+            .deco_subtitle_customer_right{
+                margin-top: 100px;
+            }
+        }
+        .containers_customers{
+            @include flex($content: space-around);
+            width: 1200px;
+            .customer{
+                @include flex($dir: column);
+                gap: 10px;
+                .picture_customers{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100px;
+                    background-image: url(images/chat-potte-2-big.png);
+                    background-size: cover;
+                    opacity: 0.5;
+                    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+                }
+            }
+            .customer_v{
+                @include flex($dir: column);
+                gap: 10px;
+                .picture_customers{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100px;
+                    background-image: url(images/richtofen.png);
+                    background-size: cover;
+                    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+                }
+            }
+        }
+        .index_customers{
+            visibility: hidden;
+        }
+    }
+}
+
+.section_studies{
+    @include flex();
+    padding-top: 50px;
+    background-color: bases.$ninth_clr;
+    .containers_studies{
+        @include flex($dir: column);
+        width: 1600px;
+        gap: 50px;
+        .studies{
+            @include flex();
+            .deco_studies{
+                position: absolute;
+                left: 10%;
+                top: 315%;
+            }
+            .title_studies{
+                @include flex($dir: column);
+                width: 175px;
+                gap: 25px;
+                text-align: center;
+                font-family: bases.$primary_font;
+                font-size: 28px;
+            }
+            .deco_studies_2{
+                position: absolute;
+                left: 75%;
+                top: 310%;
+            }
+        }
+        .container_card_studies{
+            @include flex($dir: column);
+            gap: 25px;
+            .card_studies{
+                @include flex();
+                h3{
+                    margin-left: 200px;
+                    font-size: 26px;
+                }
+                p{
+                    margin-left: 200px;
+                    width: 500px;
+                    font-size: 18px;
+                    color: bases.$tertiary_clr;
+                }
+                .read_studies{
+                    width: 700px;
+                    @include flex($content: flex-end);
+                    font-size: 16px;
+                    font-weight: bold;
+                    span{
+                        background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$secondary_clr);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -moz-background-clip: text;
+                        color: transparent;
+                    }
+                }
+                .img_studies{
+                    @include img_studies_design();
+                }
+                .block_text_studies{
+                    @include text_studies_design();
+                    border: 1px solid #e7daed;
+                    border-left: 0;
+                }
+                .img_studies_2{
+                    @include img_studies_design($bg: url(images/studies_img_2.png));
+                }
+                .block_text_studies_2{
+                    @include text_studies_design($bg: #f0fff7);
+                    border: 1px solid #e7daed;
+                    border-left: 0;
+                }
+                .img_studies_3{
+                    @include img_studies_design($bg: url(images/studies_img_3.png));
+                }
+                .block_text_studies_3{
+                    @include text_studies_design($bg: #fff4f4);
+                    border: 1px solid #e7daed;
+                    border-left: 0;
+                }
+            }
+        }
+        .links_studies{
+            @include flex($content: flex-end);
+            width: 1600px;
+            font-family: bases.$primary_font;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$secondary_clr);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            color: transparent;
+        }
+    }
+}
+
+.section_dev{
+    @include flex($dir: column);
+    background-color: bases.$ninth_clr;
+    padding: 50px 0px;
+    .title_dev{
+        @include flex($dir: column);
+        width: 350px;
+        gap: 25px;
+        text-align: center;
+        font-family: bases.$primary_font;
+        font-size: 28px;
+    }
+    .container_dev{
+        @include flex();
+        gap: 50px;
+        .container_card_dev{
+            @include flex($dir: column);
+            padding-top: 50px;
+            gap: 25px;
+            .card_dev{
+                @include flex($items: flex-start);
+                @include card_design($w: 600px,$h: 200px, $border: 5px, $bg: #ffffff);
+                gap: 25px;
+                box-shadow: none;
+                border: 1px solid #e7daed;
+                img{
+                    margin-top: 50px;
+                }
+                .text_card_dev{
+                    @include flex($dir: column, $items: flex-start);
+                    width: 400px;
+                    gap: 25px;
+                    margin-top: 50px;
+                    font-family: bases.$primary_font;
+                    h3{
+                        font-size: 20px;
+                    }
+                    p{
+                        font-size: 14px;
+                        .clr_text_dev{
+                            font-weight: bold;
+                        }
+                        .clr_text_dev_2{
+                            background: linear-gradient(to bottom left, bases.$primary_dev_clr_linear, bases.$primary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_3{
+                            background: linear-gradient(to bottom left, bases.$secondary_dev_clr_linear, bases.$secondary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_4{
+                            background: linear-gradient(to bottom left, bases.$tertiary_dev_clr_linear, bases.$tertiary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_5{
+                            background: linear-gradient(to bottom left, bases.$quaternary_dev_clr_linear, bases.$quaternary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_6{
+                            background: linear-gradient(to bottom left, bases.$quinary_dev_clr_linear, bases.$quinary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+
+.footer_section_hire{
+    @include flex();
+    padding: 50px 0px;
+    .container_hire{
+        @include flex($content: space-around);
+        @include card_design($w: 1600px, $h: 300px, $bg: none, $border: 20px);
+        background:linear-gradient(to bottom left, #f1f1f5, #e4ecf7);
+        box-shadow: none;
+        .title_hire{
+            width: 700px;
+            font-family: bases.$primary_font;
+            font-size: 28px;
+        }
+        .container_btn_hire{
+            @include flex($dir: column);
+            gap: 30px;
+            .btn_hire{
+                @include flex();
+                @include btn_design($h: 50px, $w: 200px, $bg: none);
+                background: linear-gradient(to bottom left, #ffc656, #f16063);
+                font-family: bases.$primary_font;
+                font-size: 16px;
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
+.section_footer{
+    @include flex($dir: column);
+    padding: 50px 0px;
+    gap: 75px;
+    .container_footer{
+        @include flex();
+        width: 1600px;
+        gap: 150px;
+        font-family: bases.$primary_font;
+        .container_links_footer{
+            @include flex($dir: column);
+            width: 300px;
+            height: 300px;
+            .links_footer{
+                @include flex($dir: column,$content: flex-start,$items: flex-start);
+                gap: 25px;
+                font-size: 18px;
+                color: bases.$tertiary_clr;
+                .logo_footer{
+                    width: 90px;
+                    height: 30px;
+                }
+            }
+        }
+        .links_footer_responsive{
+            @include flex();
+            gap: 150px;
+        }
+        .links_footer_2{
+            @include flex($dir: column,$content: flex-start,$items: flex-start);
+            width: 150px;
+            height: 300px;
+            font-size: 18px;
+            gap: 15px;
+            p{
+                color: bases.$tertiary_clr;
+            }
+        }
+        .links_footer_3{
+            @include flex($dir: column,$content: flex-start,$items: flex-start);
+            gap: 25px;
+            width: 300px;
+            font-size: 18px;
+            height: 300px;
+            p{
+                color: bases.$tertiary_clr;
+            }
+        }
+        .links_footer_4{
+            @include flex($content: flex-start,$items: flex-end);
+            width: 300px;
+            height: 300px;
+            gap: 10px;
+        }
+        .links_footer_responsive_logo{
+            display: none;
+        }
+    }
+    .copyright_footer{
+        font-family: bases.$primary_font;
+        font-size: 12px;
+    }
+}
+
+.section_retourdwwm{
+    @include flex($dir: column);
+    padding: 50px 0px;
+    .btn_retour{
+        @include flex();
+        @include btn_design($bg: white, $w: 150px, $h:50px,$border: 50px);
+        box-shadow: 0px 0px 10px black;
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    .navbar{
+        @include flex($dir: column);
+        height: 120px;
+        gap: 25px;
+        padding: 20px 0px;
+        .logo{
+            height: 50px;
+        }
+        .links{
+            display: none;
+        }
+        .btn_nav{
+            display: none;
+        }
+        .navbar_responsive{
+            @include flex();
+            gap: 50px;
+            width: 100%;
+            height: 80px;
+            margin: 0px 50px;
+            .links_responsive{
+                @include flex($content: space-around);
+                width: 600px;
+                color: bases.$tertiary_clr;
+                font-family: bases.$primary_font;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .btn_nav_responsive{
+                @include btn_design($h: 35px, $w: 100px, $border: 5px, $bg: none, $color: #fafafa);
+                @include flex();
+                font-size: 14px;
+                font-weight: semibold;
+                font-family: bases.$primary_font;
+                background: linear-gradient(to bottom left, bases.$primary_clr, bases.$secondary_clr);
+            }
+        }
+    }
+
+    .header{
+        margin-bottom: 50px;
+        @include flex();
+        margin-top: 50px;
+        margin-left: 25px;
+        .text_header{
+            @include flex($dir: column);
+            text-align: center;
+            gap: 50px;
+            width: 340px;
+            .title{
+                font-size: 18px;
+            }
+            .subtitle{
+                font-size: 14px;
+            }
+            .btn_header{
+                @include btn_design($w: 125px, $h: 40px, $bg: bases.$quinary_clr);
+                font-size: 12px;
+            }
+        }
+        .img_header{
+            display: none;
+        }
+    }
+
+    .section_services{
+        height: 400px;
+        padding: 50px 0px;
+        .deco_circle_services{
+            position: absolute;
+            left: 30%;
+            top: 80%;
+            z-index: -1;
+        }
+        .titles_services{
+            font-size: 20px;
+        }
+        .container{
+            gap: 20px;
+            .card_services{
+                @include card_design($w:150px, $h:125px);
+                font-size: 12px;
+                padding: 10px 10px;
+                gap: 10px;
+                .subtitle_card_responsive{
+                    display: block;
+                }
+                .subtitle_card{
+                    display: none;
+                }
+            }
+            .card_services_v{
+                @include card_design($w:150px, $h:125px);
+                font-size: 12px;
+                gap: 10px;
+                .subtitle_card_responsive{
+                    display: block;
+                }
+                .subtitle_card{
+                    display: none;
+                }
+            }
+        }
+        .index_carrousel{
+            @include flex($content: center);
+            margin-right: 0px;
+            .index{
+                @include flex($content:center);
+                width: 150px;
+            }
+            .index_2{
+                display: none;
+            }
+        }
+        .deco_circle_services_2{
+            position: absolute;
+            left: 10%;
+            top: 161%;
+            z-index: -1;
+        }
+    }
+
+    .section_video{
+        height: 400px;
+        margin-top: 25px;
+        .container_2{
+            @include flex();
+            width: 800px;
+            gap: 50px;
+            .block_text{
+                width: 260px;
+                gap: 35px;
+                .title_2{
+                    font-size: 20px;
+                }
+                .subtitle_2{              
+                    font-size: 14px;                  
+                }
+                .links_info{
+                    font-size: 12px;
+                }
+            }
+            .video{
+                width: 400px;
+                height: 300px;
+                background-size: cover;
+            }
+        }
+    }
+
+    .section_coworker{
+        @include flex($dir: column);
+        .deco_circle_coworker{
+            position: absolute;
+            left: 75%;
+            top: 264%;
+            z-index: -1;    
+        }
+        .container_3{
+            @include flex($items: flex-start, $content: space-between);
+            height: 200px;
+            width: 700px;
+            .block_text_partner{
+                margin-top: 75px;
+            }
+        }
+        .partner{
+            height: 350px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .section_customers{
+        padding-bottom: 50px;
+        .btn_caroussel_customer{
+            display: none;
+        }
+        .customers_caroussel{
+            .containers_customers{
+                width: 700px;
+                .customer{
+                    display: none;
+                }
+            }
+            .index_customers{
+               visibility: visible;
+            }
+        }
+    }
+
+    .section_studies{
+        .containers_studies{
+            width: 700px;
+            .studies{
+                .deco_studies{
+                    position: absolute;
+                    left: 3%;
+                    top: 440%;
+                }
+                .title_studies{
+                    font-size: 24px;
+                }
+                .deco_studies_2{
+                    position: absolute;
+                    left: 65%;
+                    top: 432%;
+                }
+            }
+            .container_card_studies{
+                .card_studies{
+                    @include flex();
+                    h3{
+                        margin-left: 30px;
+                        font-size: 18px;
+                    }
+                    p{
+                        margin-left: 30px;
+                        width: 250px;
+                        font-size: 12px;
+                    }
+                    .read_studies{
+                        width: 300px;
+                        font-size: 12px;
+                    }
+                    .img_studies{
+                        @include img_studies_design($w: 350px, $h: 275px);
+                    }
+                    .block_text_studies{
+                        @include text_studies_design($w: 350px, $h: 275px, $gap: 20px);
+                        border: 1px solid #e7daed;
+                        border-left: 0;
+                    }
+                    .img_studies_2{
+                        @include img_studies_design($w: 350px, $h: 275px, $bg: url(images/studies_img_2.png));
+                    }
+                    .block_text_studies_2{
+                        @include text_studies_design($w: 350px, $h: 275px, $gap: 20px, $bg: #f0fff7);
+                        border: 1px solid #e7daed;
+                        border-left: 0;
+                    }
+                    .img_studies_3{
+                        @include img_studies_design($w: 350px, $h: 275px, $bg: url(images/studies_img_3.png));
+                    }
+                    .block_text_studies_3{
+                        @include text_studies_design($w: 350px, $h: 275px, $gap: 20px, $bg: #fff4f4);
+                        border: 1px solid #e7daed;
+                        border-left: 0;
+                    }
+                }
+            }
+            .links_studies{
+                width: 700px; 
+                font-size: 18px;
+            }
+        }
+    }
+
+    .section_dev{
+        .title_dev{
+            width: 300px;
+            font-size: 26px;
+        }
+        .container_dev{
+            gap: 25px;
+            .container_card_dev{
+                gap: 10px;
+                .card_dev{
+                    @include flex($items: flex-start);
+                    @include card_design($w: 350px,$h: 200px, $border: 5px, $bg: #ffffff);
+                    gap: 25px;
+                    box-shadow: none;
+                    border: 1px solid #e7daed;
+                    img{
+                        margin-top: 30px;
+                    }
+                    .text_card_dev{
+                        @include flex($dir: column, $items: flex-start);
+                        width: 200px;
+                        gap: 10px;
+                        margin-top: 30px;
+                        h3{
+                            font-size: 16px;
+                        }
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+    .footer_section_hire{
+        .container_hire{
+            @include flex();
+            @include card_design($w: 700px, $h: 250px, $bg: none, $border: 20px);
+            gap: 50px;
+            .title_hire{
+                width: 400px;
+                font-size: 20px;
+            }
+            .container_btn_hire{
+                img{
+                    scale: 0.8
+                }
+                .btn_hire{
+                    @include flex();
+                    @include btn_design($h: 50px, $w: 150px, $bg: none);
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .section_footer{
+        .container_footer{
+            width: 700px;
+            gap: 50px;
+            .container_links_footer{
+                @include flex($dir: column);
+                width: 200px;
+                .links_footer{
+                    gap: 25px;
+                    font-size: 16px;
+                    .logo_footer{
+                        width: 90px;
+                        height: 30px;
+                    }
+                }
+            }
+            .links_footer_responsive{
+                @include flex();
+                gap: 0px;
+            }
+            .links_footer_2{
+                width: 150px;
+                font-size: 16px;
+            }
+            .links_footer_3{
+                width: 200px;
+                font-size: 16px;
+            }
+            .links_footer_4{
+                @include flex($items: flex-end);
+                width: 0px;
+                gap: 10px;
+            }
+        }
+        .copyright_footer{
+            font-size: 10px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+    .navbar{
+        @include flex($content: space-around);
+        .logo{
+            height: 50px;
+        }
+        .icon_nav{
+            display: flex;
+            height: 50px;
+        }
+        .links{
+            display:none;
+        }
+        .btn_nav{
+            display: none;
+        }
+        .navbar_responsive{
+            display: none;
+        }
+    }
+
+    .header{
+        @include flex($dir: column,);
+        width: 400px;
+        margin-left: 0px;
+        .text_header{
+            @include flex($dir:column,$content:center);
+            text-align: center;
+            width: 340px;
+            .title{
+                font-size: 18px;
+            }
+            .img_header_responsive{
+                display:flex;
+                justify-content: center;
+                height: 350px;
+                width: 200px;
+                scale: 0.5;
+            }
+            .subtitle{
+                display: none;
+            }
+            .btn_header{
+                @include btn_design($w: 125px, $h: 40px, $bg: bases.$quinary_clr);
+                font-size: 12px;
+            }
+        }
+        .img_header{
+            display: none;
+        }
+    }
+
+    .section_services{
+        @include flex($dir:column, $content: center);
+        height: 300px;
+        padding: 0px;
+        gap: 30px;
+        .deco_circle_services{
+            display: none;
+        }
+        .titles_services{
+            font-size: 18px;
+        }
+        .container{
+            gap: 20px;
+            .card_services{
+                display: none;
+            }
+            .card_services_v{
+                @include card_design($w:150px, $h:125px);
+                font-size: 12px;
+                margin-top: 0px;
+                gap: 10px;
+                .subtitle_card_responsive{
+                    display: block;
+                }
+                .subtitle_card{
+                    display: none;
+                }
+            }
+        }
+        .index_carrousel{
+            @include flex($content: center);
+            margin-right: 0px;
+            .index{
+                @include flex($content:center);
+                width: 150px;
+            }
+            .index_2{
+                display: none;
+            }
+        }
+        .deco_circle_services_2{
+            display: none;
+        }
+    }
+
+    .section_video{
+        height: 400px;
+        margin-top: 25px;
+        .container_2{
+            .video{
+                display: none;
+            }
+        }
+    }
+
+    .section_coworker{
+        @include flex($dir: column);
+        .deco_circle_coworker{
+            position: absolute;
+            left: 75%;
+            top: 284%;
+            z-index: -1;    
+        }
+        .container_3{
+            @include flex($items: flex-start);
+            height: 200px;
+            width: 100%;
+            .block_text_partner{
+                margin-top: 50px;
+            }
+        }
+        .partner{
+            height: auto;
+            flex-wrap: wrap;
+        }
+    }
+
+    .section_customers{
+        .customers_caroussel{
+            .title_customers{
+                font-size: 24px;
+            }
+            .subtitles_customers{
+                @include flex();
+                width: 400px;
+                font-size: 12px;
+                gap: 25px;
+                p{
+                    width: 200px;
+                }
+            }
+            .containers_customers{
+                @include flex($content: space-around);
+                width: 400px;
+            }
+            .index_customers{
+               visibility: visible;
+            }
+        }
+    }
+
+    .section_studies{
+        .containers_studies{
+            width: 350px;
+            .studies{
+                .deco_studies{
+                    display: none;
+                }
+                .deco_studies_2{
+                    display: none;
+                }
+            }
+            .container_card_studies{
+                @include flex($dir: column);
+                gap: 25px;
+                .card_studies{
+                    @include flex($dir: column); 
+                    .img_studies{
+                        @include img_studies_design($w: 350px, $h: 275px, $radius: 10px 10px 0px 0px);
+                        background-position: center;
+                    }
+                    .block_text_studies{
+                        @include text_studies_design($w: 350px, $h: 275px, $gap: 20px, $radius: 0px 0px 10px 10px);
+                        border: 1px solid #e7daed;
+                        border-top: 0;
+                    }
+                    .img_studies_2{
+                        @include img_studies_design($w: 350px, $h: 275px, $radius: 10px 10px 0px 0px, $bg: url(images/studies_img_2.png));
+                        background-position: center;
+                    }
+                    .block_text_studies_2{
+                        @include text_studies_design($w: 350px, $h: 275px, $gap: 20px, $radius: 0px 0px 10px 10px, $bg: #f0fff7);
+                        border: 1px solid #e7daed;
+                        border-top: 0;
+                    }
+                    .img_studies_3{
+                        @include img_studies_design($w: 350px, $h: 275px, $radius: 10px 10px 0px 0px, $bg: url(images/studies_img_3.png));
+                        background-position: center;
+                    }
+                    .block_text_studies_3{
+                        @include text_studies_design($w: 350px, $h: 275px, $gap: 20px, $radius: 0px 0px 10px 10px, $bg: #fff4f4);
+                        border: 1px solid #e7daed;
+                        border-top: 0;
+                    }
+                }
+            }
+            .links_studies{  
+                width: 350px; 
+                font-size: 16px;
+            }
+        }
+    }
+
+    .section_dev{
+        .title_dev{
+            width: 300px;
+            font-size: 26px;
+        }
+        .container_dev{
+            @include flex($dir: column);
+            .container_card_dev{
+                gap: 10px;
+                .card_dev{
+                    .text_card_dev{
+                        h3{
+                            font-size: 14px;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+    .footer_section_hire{
+        .container_hire{
+            @include flex($dir: column);
+            @include card_design($w: 350px, $h: 400px, $bg: none, $border: 20px);
+            gap: 50px;
+            .title_hire{
+                width: 250px;
+                font-size: 16px;
+                text-align: center;
+            }
+            .container_btn_hire{
+                .btn_hire{
+                    @include flex();
+                    @include btn_design($h: 50px, $w: 200px, $bg: none);
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .section_footer{
+        .container_footer{
+            @include flex($dir: column);
+            width: 350px;
+            gap: 25px;
+            .container_links_footer{
+                .links_footer{
+                    @include flex($dir: column);
+                    text-align: center;
+                    .logo_footer{
+                        width: 180px;
+                        height: 60px;
+                    }
+                }
+            }
+            .links_footer_responsive{
+                @include flex();
+                gap: 50px;
+                .links_footer_2{
+                    font-size: 16px;
+                }
+                .links_footer_3{
+                    width: 150px;
+                    font-size: 16px;
+                }
+            }
+            .links_footer_4{
+                display: none;
+            }
+            .links_footer_responsive_logo{
+                @include flex();
+                gap: 25px;
+            }
+        }
+    }
+}

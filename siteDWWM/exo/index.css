@@ -1,0 +1,265 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: #262626;
+    text-decoration: none;
+    font-style: none;
+}
+
+.nav_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 200px;
+    height: 120px;
+    box-shadow: 0px 4px 30px rgba(255, 255, 255, 0.5);
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+h1{
+    font-size: 46px;
+    color: beige;
+    background: transparent;
+    font-family: "Sriracha", serif;
+}
+
+h3{
+    font-size: 46px;
+    color: beige;
+}
+
+.header_exo{
+    width: 750px;
+    height: 500px;
+    background-image: url(image/me-after-learning-javascript-for-six-hours.gif);
+    background-size: cover;
+    border-radius: 25px;
+}
+
+.header_ecf{
+    width: 750px;
+    height: 500px;
+    background-image: url(image/gojo.gif);
+    background-size: cover;
+    border-radius: 25px;
+}
+
+.container_header{
+    width: 750px;
+    height: 750px;
+    border-radius: 50px;
+    background-image: url(image/my-honest-reaction-honest.gif);
+    background-size: cover;
+}
+
+a{
+    background-color: transparent;
+    color: white;
+}
+
+.btn_exo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(207,0,255,1) 0%, rgba(255,0,0,0.8953956582633054) 100%);
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #ff50d0;
+    cursor: pointer;
+    font-family: "Shantell Sans", serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.btn_accueil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(207,0,255,1) 0%, rgba(255,0,0,0.8953956582633054) 100%);
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #ff50d0;
+    font-family: "Shantell Sans", serif;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+}
+.btn_ecf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(207,0,255,1) 0%, rgba(255,0,0,0.8953956582633054) 100%);
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #ff50d0;
+    font-family: "Shantell Sans", serif;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+}
+.btn_accueil:hover{
+    background: linear-gradient(-45deg, rgba(207,0,255,1) 0%, rgba(255,0,0,0.8953956582633054) 100%);
+    box-shadow: 0px 0px 10px rgb(255, 80, 208);
+    border: none;
+}
+.btn_exo:hover{
+    background: linear-gradient(-45deg, rgba(207,0,255,1) 0%, rgba(255,0,0,0.8953956582633054) 100%);
+    box-shadow: 0px 0px 10px rgb(255, 80, 208);
+    border: none;
+}
+.btn_ecf:hover{
+    background: linear-gradient(-45deg, rgba(207,0,255,1) 0%, rgba(255,0,0,0.8953956582633054) 100%);
+    box-shadow: 0px 0px 10px rgb(255, 80, 208);
+    border: none;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    padding: 50px;
+}
+
+.btn_exojs{
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 10px white;
+    font-family: "Shantell Sans", serif;
+    font-weight: bold;
+    font-style: italic;
+   cursor: pointer; 
+}
+.btn_exojs:hover{
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 0px 0px 10px black;
+}
+.btn_exemplejs:hover{
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 0px 0px 10px black;
+}
+
+.btn_exemplejs{
+    width: 250px;
+    height: 75px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 10px white;
+    font-size: 30px;
+    font-family: "Shantell Sans", serif;
+    font-weight: bold;
+    font-style: italic;
+   cursor: pointer; 
+}
+
+.section_btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;  
+    width: 1600px;
+}
+
+.text_exo{
+    width: 500px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 28px;
+    color: beige;
+    gap: 25px;
+    font-family: "VT323", serif;
+}
+
+.btn_condition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;  
+    width: 1600px;
+}
+.btn_boucle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;  
+    width: 1600px;
+}
+.btn_fonction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;  
+    width: 1600px;
+}
+
+.section_ecf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;  
+    width: 1600px;
+}
+
+.btn_choix_ecf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 75px;
+    border-radius: 50px;
+    background-color: black;
+    color: blue;
+    box-shadow: 0px 0px 10px white;
+    font-family: "Shantell Sans", serif;
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer; 
+}
+
+.btn_choix_ecf:hover{
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px black;
+}
+.btn_choix_ecf a{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.btn_choix_ecf:hover a{
+    margin-left: 50px;
+    margin-right: 50px;
+    color: black;
+}
+
