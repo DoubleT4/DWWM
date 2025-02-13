@@ -333,43 +333,43 @@ for(let cle in panier){
 
 joueur.ajouterScore(parseFloat(prompt("entrez un le nombre de point gagner"))) */
 
-let fuck = [
+/* let fuck = [
   {
-    user1: "marc",
-    mail1: "marc59@tamere.com",
+    user: "marc",
+    mail: "marc59@tamere.com",
     appelMessage1: function () {
       console.log(
         "Bonjour je m'appelle",
-        this.user1,
+        this.user,
         "mon mail est :",
-        this.mail1
+        this.mail
       );
     },
   },
   {
-    user2: "jean",
-    mail2: "jean@filetonpere.fr",
+    user: "jean",
+    mail: "jean@filetonpere.fr",
     appelMessage2: function () {
         console.log(
           "Bonjour je m'appelle",
-          this.user2,
+          this.user,
           "mon mail est :",
-          this.mail2
+          this.mail
         );
       },
   },
   {
-    user3: "deez",
-    mail3: "deez@nuts.com",
+    user: "deez",
+    mail: "deez@nuts.com",
     appelMessage3: function () {
         console.log(
           "Bonjour je m'appelle",
-          this.user3,
+          this.user,
           "mon mail est :",
-          this.mail3
+          this.mail
         );
       },
   },
-];
+]
 
-console.log(fuck[1].appelMessage2());
+fuck[1].appelMessage2();*/
